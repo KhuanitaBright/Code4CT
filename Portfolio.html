@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>Code4CT || PORTFOLIO</title>
+
+    <!-- link for jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- link for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- link for bootstrap icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <style media="screen">
+    body {
+      font: 17px/1.5 'Lato', sans-serif;
+      color: #797979;
+      padding: 0;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow-x: hidden;
+      word-wrap: break-word;
+    }
+      /*The header includes the logo, nav and search box*/
+    header {
+      position: fixed;
+      width: 100%;
+      z-index: 1;
+      padding-top: 30px;
+      margin-bottom: 50px;
+      min-height: 70px;
+      background-color: white;
+    }
+
+    header a {
+      color: grey;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    header a:hover {
+      color: #EE534F;
+      font-weight: bold;
+    }
+
+    header li {
+      float: left;
+      display: inline;
+      padding: 7px 10px 0 20px;
+    }
+
+    header img {
+      float: left;
+      margin-left: 50px;
+    }
+
+    header nav {
+      float: left;
+    }
+
+    ul {
+      margin: 0;
+    }
+
+    header input {
+      margin-top: 8px;
+      height: 30px;
+    }
+
+    .pageheader {
+      width: 100%;
+      height: 300px;
+      color: #797979;
+      background-color: #EEEEEE;
+      padding:50px;
+    }
+
+    .pageheader h1 {
+      margin-top: 100px;
+      font-size: 40px;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .pageheader p {
+      font-size: 14px;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .photos {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      margin-top: 10px;
+      line-height: 150px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+    }
+
+        /* Style the Image Used to Trigger the Modal */
+    .galleryImg {
+     border-radius: 5px;
+     cursor: pointer;
+     transition: 0.3s;
+    }
+
+    .galleryImg:hover {opacity: 0.7;}
+
+    /* The Modal (background) */
+    .modal {
+     display: none; /* Hidden by default */
+     position: fixed; /* Stay in place */
+     z-index: 1; /* Sit on top */
+     padding-top: 100px; /* Location of the box */
+     left: 0;
+     top: 0;
+     width: 100%; /* Full width */
+     height: 100%; /* Full height */
+     overflow: auto; /* Enable scroll if needed */
+     background-color: rgb(0,0,0); /* Fallback color */
+     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+
+    /* Modal Content (Image) */
+    .modal-content {
+     margin: auto;
+     display: block;
+     width: 80%;
+     max-width: 700px;
+    }
+
+    /* Caption of Modal Image (Image Text) - Same Width as the Image */
+    #caption {
+     margin: auto;
+     display: block;
+     width: 80%;
+     max-width: 700px;
+     text-align: center;
+     color: #ccc;
+     padding: 10px 0;
+     height: 150px;
+    }
+
+    /* Add Animation - Zoom in the Modal */
+    .modal-content, #caption {
+     -webkit-animation-name: zoom;
+     -webkit-animation-duration: 0.6s;
+     animation-name: zoom;
+     animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+     from {-webkit-transform:scale(0)}
+     to {-webkit-transform:scale(1)}
+    }
+
+    @keyframes zoom {
+     from {transform:scale(0)}
+     to {transform:scale(1)}
+    }
+
+    /* The Close Button */
+    .close {
+     position: absolute;
+     top: 15px;
+     right: 35px;
+     color: #f1f1f1;
+     font-size: 40px;
+     font-weight: bold;
+     transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+     color: #bbb;
+     text-decoration: none;
+     cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px){
+     .modal-content {
+         width: 100%;
+     }
+    }
+
+    .blkborder {
+      display: flex;
+      flex-flow: row;
+      justify-content: flex-start;
+      background-color: black;
+      margin-top: 50px;
+      min-height: auto;
+      width: 100%;
+      text-align: center;
+      color: #fff;
+    }
+
+    /*carousel styling*/
+    #partners{
+      width: 10000%;
+    }
+    /*this styling works with JQuery and regulates the speed and loop of the carousel*/
+    #partners.ready > *{
+    display: inline-block;
+    float:left;
+    overflow: hidden;
+
+    webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+
+
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+
+
+    -webkit-animation-duration: 20s;
+    animation-duration: 20s;
+
+
+    -webkit-animation-name: marginator;
+    animation-name: marginator;
+
+
+
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    }
+    /*the carousel will pause on hover and the movement is regulated here*/
+    #partners:hover > *{
+
+
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused;
+    }
+
+    @-webkit-keyframes marginator {
+      0% {
+        -webkit-transform: translate(0,0);
+        -webkit-transform: translate3d(0,0,0);
+      }
+      100% {
+        -webkit-transform: translate(-100%,0);
+        -webkit-transform: translate3d(-100%,0,0);
+      }
+    }
+
+    @keyframes marginator {
+      0% {
+
+        -webkit-transform: translate(0,0);
+        transform: translate(0,0);
+
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+      }
+      100% {
+
+
+        -webkit-transform: translate(-100%,0);
+        transform: translate(-100%,0);
+
+
+        -webkit-transform: translate3d(-100%,0,0);
+        transform: translate3d(-100%,0,0);
+      }
+    }
+    /*This wrapper holds the carousel*/
+    #partners-wrapper{
+      overflow: hidden;
+      background-color: black;
+      margin-left: -100px;
+      width: 1450px;
+      height: 200px;
+    }
+
+    #partners img {
+      margin: 5px;
+    }
+
+    footer{
+      display: grid;
+      grid-column: 1 / 12;
+      grid-row: 10 / 11;
+      margin: 70px 0px 30px 20px;
+      height: 50px;
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(4, 3fr);
+      grid-column-gap: 4vw;
+      grid-auto-columns: 25%;
+      font-size: 11px;
+      text-align: left;
+    }
+
+    footer ul li{
+      list-style-type: none;
+    }
+
+    footer div{
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
+    @media(max-width: 800px) {
+      footer {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .bottomfooter {
+      width: 100%;
+      background-color: #EE534F;
+      height: 60px;
+      color: #fff;
+      padding: 3px;
+    }
+
+    .bottomfooter a{
+      color: #fff;
+    }
+
+    @media(max-width: 800px) {
+      div #partners {
+        display: none;
+    }
+    }
+
+    @media(max-width: 800px) {
+    body {
+      width: 100%;
+      display: block;
+      padding: 0;
+      background-color: #fff;
+    }
+    }
+
+    @media(max-width: 800px) {
+    body img{
+      display: block;
+      padding: 0;
+      margin: 0;
+    }
+    }
+
+    @media(max-width: 800px) {
+      header {
+        border-bottom: none;
+      }
+    header li{
+      width: 100%;
+      display: block;
+      background-color: #EE534F;
+      border: 1px solid lightgrey;
+    }
+    header img {
+      width:100%;
+      height: auto;
+      padding: 0px;
+     }
+     header input {
+       display: none;
+     }
+     header a {
+       color: lightgrey;
+       padding-bottom: 3px;
+     }
+     header a:hover {
+       color: darkgrey;
+     }
+    }
+
+    @media(max-width: 800px) {
+      div #contactform {
+        width: 100%;
+      }
+      div input {
+        width: 100%;
+      }
+      div textarea {
+        width: 100%;
+      }
+    }
+
+    @media(max-width: 800px) {
+      div #contactinfo {
+        width: 100%;
+        word-wrap: break-word;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+          <nav>
+          <a href="index.html"><img style="margin-right: 100px" src="http://code4ct.com/wp-content/uploads/2016/06/code4ct-logo-1.jpg" height= "50px" width= "150px"></a>
+
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="About.html">ABOUT</a></li>
+          <li><a href="Portfolio.html">PORTFOLIO</a></li>
+          <li><a href="Courses.html">COURSES</a></li>
+          <li><a href="Contact.html">CONTACT</a></li>
+
+          <input style="margin-left: 140px;" type="search" placeholder="Search"><a style="padding-left: 0px" href><span class="glyphicon glyphicon-search" style="margin-top: 5px; padding-left: 0px;"></span></a>
+
+        </nav>
+    </header>
+
+     <div class="pageheader">
+
+      <h1>PORTFOLIO</h1>
+      <p><span style="color: #EE534F">HOME</span> → PORTFOLIO</p>
+
+    </div>
+
+    <div class="container">
+      <div style= "text-align: center">
+
+      <h3>Our Awe<span style="border-bottom: 1px solid #EE534F">some</span> Portfolio</h3>
+
+      <p>We equip high potential female learners with the coding, problem solving</p>
+
+      <p> and life skills that will allow them to leverage technology to contribute meaningfully to South Africa’s innovation system.</p>
+
+      <p>The program exposes young women to how technology can be used for soci innovation and helps them navigate critical study decisions.</p>
+    </div>
+    </div>
+
+    <div class = "photos" style = "padding:0px; margin-left: 5px">
+
+
+
+      <img class="galleryImg" src="Images\portfolio\IMG_2781.png" alt="" height="235px" width="330px">
+      <img class="galleryImg" src="Images\portfolio\IMG_3295.png" alt="" height="235px" width="330px">
+      <img class="galleryImg" src="Images\portfolio\IMG_7408.png" alt="" height="235px" width="330px">
+      <img class="galleryImg" src="Images\resized images\square04.jpg" alt="" height="235px" width="330px">
+      <img class="galleryImg" src="Images\portfolio\IMG_7477 (1).png" alt="" height="235px" width="330px">
+      <img class="galleryImg" src="Images\portfolio\IMG_2781.png" alt="" height="235px" width="330px">
+      <img class="galleryImg" src="Images\portfolio\IMG_3295.png" alt="" height="235px" width="330px">
+      <img class="galleryImg" src="Images\resized images\square02.jpg" alt="" height="235px" width="330px">
+      <img class="galleryImg" src="Images\portfolio\IMG_2781.png" alt="" height="235px" width="330px">
+      <img class="galleryImg" src="Images\resized images\square04.jpg" alt="" height="235px" width="330px">
+      <img class="galleryImg" src="Images\portfolio\IMG_3295.png" alt="" height="235px" width="330px">
+      <img class="galleryImg" src="Images\portfolio\IMG_3295.png" alt="" height="235px" width="330px">
+
+
+  </div>
+
+  <div id="myModal" class="modal">
+     <span class="close">&times;</span>
+     <img class="modal-content" id="img01">
+     <div id="caption"></div>
+   </div>
+
+   <div class="blkborder">
+     <!-- carousel -->
+     <div id="partners-wrapper">
+       <div id="partners">
+         <div>
+           <img src="Images\Logos\Transparent\Code4CT-Partners-CSG-Logo.png" width="200px" height: "80px">
+           <img src="Images\Logos\Transparent\Code4CT-Partners-Deloitte-Digital.png" width="200px" height: "80px">
+           <img src="Images\Logos\Transparent\Code4CT-Partners-Lwande.png" width="200px" height: "80px">
+           <img src="Images\Logos\Transparent\Code4CT-Partners-Mobenzi-Logo.png" width="200px" height: "80px">
+           <img src="Images\Logos\Transparent\Code4CT-Partners-Open-Box.png" width="200px" height: "80px">
+           <img src="Images\Logos\Transparent\Code4CT-Partners-Take-A-Lot-Logo-1.png" width="200px" height: "80px">
+           <img src="Images\Logos\Transparent\Code4CT-Partners-TNS.png" width="200px" height: "80px">
+           <img src="Images\Logos\Transparent\Code4CT-Partners-Mobenzi-Logo.png" width="200px" height: "80px">
+           <img src="Images\Logos\Transparent\Code4CT-Partners-Open-Box.png" width="200px" height: "80px">
+         </div>
+     </div>
+   </div>
+ </div>
+
+ <footer>
+
+   <div>
+     <h4>Legal</h4>
+   <p>Code for Cape Town is a project of Innovate South Africa, which is a registered non-profit (137806NPO) and a Public Beneficiary Organisation (930050338)</p>
+
+ </div>
+
+   <div>
+
+   <h4>Company</h4>
+   <ul>
+     <li><a href="JS_Project_About.html">ABOUT</a></li>
+     <li><a href="JS_Project_Portfolio.html">PORTFOLIO</a></li>
+     <li><a href="JS_Project_Courses.html">COURSES</a></li>
+     <li><a href="JS_Project_Contact.html">CONTACT</a></li>
+   </ul>
+
+ </div>
+
+ <div>
+   <h4>Learn More</h4>
+   <ul>
+     <li><a href="JS_Project_About.html">What we do</a></li>
+     <li><a href="JS_Project_Portfolio.html">Our Work</a></li>
+     <li><a href="JS_Project_Courses.html">Opportunities</a></li>
+   </ul>
+ </div>
+
+ <div>
+   <h4>Contact</h4>
+   <p><span class="glyphicon glyphicon-earphone"></span> 021 685 0991 </p>
+   <p><span class="glyphicon glyphicon-envelope"></span> info@code4ct.com</p>
+   <p><span class="glyphicon glyphicon-map-marker"></span> Innovate South Africa, 403 Old Castle Brewery, 6 Beach Rd, Woodstock, Cape Town, 7915</p>
+ </div>
+
+ </footer>
+
+ </div>
+
+
+   <section class="bottomfooter" style="margin-top: 150px; background-color: #EE534F">
+
+   <p style="float: left; margin-left: 100px">copyright © 2017 PRIVACY POLICY</p>
+
+   <p style="float: right; margin-right: 100px;">Follow Us:<a href="https://www.facebook.com/code4ct/" target="_blank"><i class="fa fa-facebook"></i></a>
+     <a href="https://twitter.com/@code4ct" target="_blank"><i class="fa fa-twitter"></i></a>
+     <a href="https://www.instagram.com/code4ct/" target="_blank"><i class="fa fa-instagram"></i></a>
+     <a href="#" target="_blank"><i class="fa fa-google-plus"></i></a>
+     <a href="https://www.linkedin.com/company/9414552/" target="_blank"><i class="fa fa-linkedin"></i></a>
+     <a href="#" target="_blank"><i class="fa fa-skype"></i></a></p>
+
+   </section>
+
+  <script type="text/javascript">
+  // Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = $('.galleryImg');
+var modalImg = $("#img01");
+var captionText = document.getElementById("caption");
+$('.galleryImg').click(function(){
+    modal.style.display = "block";
+    var newSrc = this.src;
+    modalImg.attr('src', newSrc);
+    captionText.innerHTML = this.alt;
+});
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+  </script>
+
+  <script type="text/javascript">
+  // the elements are cloned in order for the carousel to move infinitely
+  $(function () {
+    var $first=$('#partners>:first-child');
+    $('#partners').width($first.outerWidth(true));
+    $first.clone(true).appendTo('#partners');
+    $('#partners').addClass('ready');
+  })
+  </script>
+  </body>
+</html>

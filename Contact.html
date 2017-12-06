@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Code4CT || CONTACT</title>
+
+    <!-- link for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- link for bootstrap icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+    <style media="screen">
+    body {
+      font: 17px/1.5 'Lato', sans-serif;
+      color: #797979;
+      padding: 0;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow-x: hidden;
+      word-wrap: break-word;
+    }
+      /*The header includes the logo, nav and search box*/
+    header {
+      position: fixed;
+      width: 100%;
+      z-index: 1;
+      padding-top: 30px;
+      margin-bottom: 50px;
+      min-height: 70px;
+      background-color: white;
+    }
+
+    header a {
+      color: grey;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    header a:hover {
+      color: #EE534F;
+      font-weight: bold;
+    }
+
+    header li {
+      float: left;
+      display: inline;
+      padding: 7px 10px 0 20px;
+    }
+
+    header img {
+      float: left;
+      margin-left: 50px;
+    }
+
+    header nav {
+      float: left;
+    }
+
+    ul {
+      margin: 0;
+    }
+
+    header input {
+      margin-top: 8px;
+      height: 30px;
+    }
+
+    .pageheader {
+      width: 100%;
+      height: 300px;
+      color: #797979;
+      background-color: #EEEEEE;
+      padding:50px;
+    }
+
+    .pageheader h1 {
+      margin-top: 100px;
+      font-size: 40px;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .pageheader p {
+      font-size: 14px;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    #contactdetails {
+      background-color: #fff;
+      margin-top: 50px;
+    }
+
+    #contactform {
+      width: 60%;
+      float: left;
+    }
+
+    @media(max-width: 800px) {
+      div #contactform {
+        display: block;
+        width: 100%;
+        margin-top: 100px;
+        position: relative;
+      }
+    }
+
+    form input {
+      width: 195px;
+      height: 30px;
+      padding: 7px;
+      border: 1px solid lightgrey;
+      margin: 10px 10px 10px 0;
+    }
+
+    textarea {
+      border: 1px solid lightgrey;
+      margin: 10px 10px 10px 0;
+    }
+
+    button {
+      color: white;
+      font-size: 15px;
+      background-color: #EE534F;
+      width: 100px;
+      padding: 5px;
+      border-radius: 4px;
+      border-color: #EE534F;
+    }
+
+    button:hover {
+    background:lighten(#ED524E, 50%);
+    margin:6px;
+    width: 150px;
+    height:40px;
+    -webkit-transition: all 100ms ease;
+  }
+
+    #contactinfo {
+      width: 30%;
+      float: right;
+    }
+
+    #map {
+      margin-top: 50px;
+      width:
+      height:500px;
+      filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+ */
+      filter: gray; /* IE6-9 */
+  	  -webkit-filter: grayscale(99%); /* Chrome 19+ & Safari 6+ */
+    }
+
+    footer{
+      display: grid;
+      grid-column: 1 / 12;
+      grid-row: 10 / 11;
+      margin: 70px 0px 30px 20px;
+      height: 50px;
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(4, 3fr);
+      grid-column-gap: 4vw;
+      grid-auto-columns: 25%;
+      font-size: 11px;
+      text-align: left;
+    }
+
+    footer ul li{
+      list-style-type: square;
+    }
+
+    footer div{
+      width: 200px;
+      margin-bottom: 20px;
+    }
+
+    footer a{
+      text-decoration: none;
+      color: #EE534F;
+    }
+
+    @media(max-width: 800px) {
+      footer {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .bottomfooter {
+      width: 100%;
+      background-color: #EE534F;
+      height: 60px;
+      color: #fff;
+      padding: 3px;
+    }
+
+    .bottomfooter a{
+      color: #fff;
+    }
+
+    @media(max-width: 800px) {
+    body {
+      width: 100%;
+      display: block;
+      padding: 0;
+      background-color: #fff;
+    }
+    }
+
+    @media(max-width: 800px) {
+    body img{
+      display: block;
+      padding: 0;
+      margin: 0;
+    }
+    }
+
+    @media(max-width: 800px) {
+      header {
+        border-bottom: none;
+      }
+    header li{
+      width: 100%;
+      display: block;
+      background-color: #EE534F;
+      border: 1px solid lightgrey;
+    }
+    header img {
+      width:100%;
+      height: auto;
+      padding: 0px;
+     }
+     header input {
+       display: none;
+     }
+     header a {
+       color: lightgrey;
+       padding-bottom: 3px;
+     }
+     header a:hover {
+       color: darkgrey;
+     }
+    }
+
+    @media(max-width: 800px) {
+      div #contactform {
+        width: 100%;
+      }
+      div input {
+        width: 100%;
+      }
+      div textarea {
+        width: 100%;
+      }
+    }
+
+    @media(max-width: 800px) {
+      div #contactinfo {
+        width: 100%;
+        word-wrap: break-word;
+      }
+    }
+
+
+    </style>
+
+  </head>
+  <body>
+    <a href="#" id="scroll" style="display: none;"><span></span></a>
+      <header>
+            <nav>
+            <a href="index.html"><img style="margin-right: 100px" src="http://code4ct.com/wp-content/uploads/2016/06/code4ct-logo-1.jpg" height= "50px" width= "150px"></a>
+
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="About.html">ABOUT</a></li>
+            <li><a href="Portfolio.html">PORTFOLIO</a></li>
+            <li><a href="Courses.html">COURSES</a></li>
+            <li><a href="Contact.html">CONTACT</a></li>
+
+            <input style="margin-left: 140px;" type="search" placeholder="Search"><a style="padding-left: 0px" href><span class="glyphicon glyphicon-search" style="margin-top: 5px; padding-left: 0px;"></span></a>
+
+          </nav>
+      </header>
+
+       <div class="pageheader">
+
+        <h1>CONTACT US</h1>
+        <p><span style="color: #EE534F">HOME</span> → CONTACT</p>
+
+      </div>
+
+      <div id="contactdetails" class="container">
+        <div id="contactform">
+
+        <h2><span style="border-bottom: 1px solid #ED524E">Send</span> Us a Message</h2>
+          <form>
+            <input type="text" id = "yourname" placeholder="Your name">
+            <input type="text" id = "youremail" placeholder="Your email">
+            <input style="padding-right:1px" type="text" id = "yournumber" placeholder="Phone number">
+            <textarea name="message" rows="9" cols="66" placeholder="Your message"></textarea>
+
+            <button type="button" name="button">Send Email</button>
+          </form>
+
+        </div>
+
+        <div id="contactinfo">
+          <h2><span style="border-bottom: 1px solid #ED524E">Contact</span> Info</h2>
+
+          <p><span class="glyphicon glyphicon-earphone"></span> 021 685 0991 </p>
+          <p><span class="glyphicon glyphicon-envelope"></span> info@code4ct.com</p>
+          <p><span class="glyphicon glyphicon-time"></span> Mon-Fri 09:00 to 12:00</p>
+          <p><span class="glyphicon glyphicon-map-marker"></span> Innovate South Africa, 403 Old Castle Brewery, 6 Beach Rd, Woodstock, Cape Town, 7915</p>
+
+        </div>
+      </div>
+
+      <div id="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.638062445999!2d18.44652591521169!3d-33.92471368064084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5d9854044ed9%3A0x6a0ebf49da5aabab!2sCodeSpace!5e0!3m2!1sen!2sza!4v1511462091578" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+
+      <footer>
+
+        <div>
+          <h4>Legal</h4>
+        <p>Code for Cape Town is a project of Innovate South Africa, which is a registered non-profit (137806NPO) and a Public Beneficiary Organisation (930050338)</p>
+
+      </div>
+
+        <div>
+
+        <h4>Company</h4>
+        <ul>
+          <li><a href="JS_Project_About.html">ABOUT</a></li>
+          <li><a href="JS_Project_Portfolio.html">PORTFOLIO</a></li>
+          <li><a href="JS_Project_Courses.html">COURSES</a></li>
+          <li><a href="JS_Project_Contact.html">CONTACT</a></li>
+        </ul>
+
+      </div>
+
+      <div>
+        <h4>Learn More</h4>
+        <ul>
+          <li><a href="JS_Project_About.html">What we do</a></li>
+          <li><a href="JS_Project_Portfolio.html">Our Work</a></li>
+          <li><a href="JS_Project_Courses.html">Opportunities</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p><span class="glyphicon glyphicon-earphone"></span> 021 685 0991 </p>
+        <p><span class="glyphicon glyphicon-envelope"></span> info@code4ct.com</p>
+        <p><span class="glyphicon glyphicon-map-marker"></span> Innovate South Africa, 403 Old Castle Brewery, 6 Beach Rd, Woodstock, Cape Town, 7915</p>
+      </div>
+
+      </footer>
+
+      </div>
+
+
+        <section class="bottomfooter" style="margin-top: 150px; background-color: #EE534F">
+
+        <p style="float: left; margin-left: 100px">copyright © 2017 PRIVACY POLICY</p>
+
+        <p style="float: right; margin-right: 100px;">Follow Us:<a href="https://www.facebook.com/code4ct/" target="_blank"><i class="fa fa-facebook"></i></a>
+          <a href="https://twitter.com/@code4ct" target="_blank"><i class="fa fa-twitter"></i></a>
+          <a href="https://www.instagram.com/code4ct/" target="_blank"><i class="fa fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fa fa-google-plus"></i></a>
+          <a href="https://www.linkedin.com/company/9414552/" target="_blank"><i class="fa fa-linkedin"></i></a>
+          <a href="#" target="_blank"><i class="fa fa-skype"></i></a></p>
+
+        </section>
+
+  </body>
+</html>

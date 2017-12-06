@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Code4CT || Welcome</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <!-- js file for the countup -->
+    <script src="JS\countup.js" charset="utf-8"></script>
+    <!-- link for jquery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- link for bootstrap icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- link for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style media="screen">
+
+    body {
+      font: 14px/1.5 'Lato', sans-serif;
+      color: #797979;
+      padding: 0;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow-x: hidden;
+      word-wrap: break-word;
+    }
+
+    @media(max-width: 800px) {
+    body {
+      width: 100%;
+      display: block;
+      padding: 0;
+      background-color: #fff;
+    }
+    }
+
+    @media(max-width: 800px) {
+    body img{
+      display: block;
+      padding: 0;
+      margin: 0;
+    }
+    }
+
+    /*The header includes the logo, nav and search box*/
+  header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    padding-top: 30px;
+    margin-bottom: 50px;
+    min-height: 70px;
+    background-color: white;
+  }
+
+  header a {
+    color: grey;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  header a:hover {
+    color: #EE534F;
+    font-weight: bold;
+  }
+
+  header li {
+    float: left;
+    display: inline;
+    padding: 7px 10px 0 20px;
+  }
+
+  header img {
+    float: left;
+    margin-left: 50px;
+    margin-right: 200px;
+  }
+
+  header nav {
+    float: left;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  header input {
+    margin-top: 8px;
+    height: 30px;
+  }
+
+  .pageheader {
+    width: 100%;
+    height: 300px;
+    color: #797979;
+    background-color: #EEEEEE;
+    padding:50px;
+  }
+
+  .pageheader h1 {
+    margin-top: 100px;
+    font-size: 40px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .pageheader p {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  @media(max-width: 800px) {
+  body {
+    width: 100%;
+    display: block;
+    padding: 0;
+    background-color: #fff;
+  }
+  }
+
+  @media(max-width: 800px) {
+  body img{
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
+  }
+
+  @media(max-width: 800px) {
+    header {
+      border-bottom: none;
+    }
+  header li{
+    width: 100%;
+    display: block;
+    background-color: #EE534F;
+    border: 1px solid lightgrey;
+  }
+  header img {
+    width:100%;
+    height: auto;
+    padding: 0px;
+   }
+   header input {
+     display: none;
+   }
+   header a {
+     color: lightgrey;
+     padding-bottom: 3px;
+   }
+   header a:hover {
+     color: darkgrey;
+   }
+  }
+      /*css for slider*/
+
+      /*This images will be layered in the css slider*/
+      #layer1, #layer2, #layer3 {
+        position: absolute;
+        width: 100%;
+        min-height: 100%;
+        top: 0px;
+        left: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      /*I've added the images as background images for better responsiveness*/
+      #layer1{
+        background-image: url('Images/Students/untitled-0932.jpg');
+      }
+      /*I will animate my images using css (keyframes can be found below)*/
+      #layer2 {
+        background-image:url('Images/resized images/Untitled.png');
+        background-origin: border-box;
+        animation: layer2anim 10s infinite;
+      }
+
+      #layer3 {
+        background-image:url('Images/resized images/hi.jpg');
+        animation: layer3anim 10s infinite;
+      }
+
+      div #slider {
+        margin: 0;
+        width: 100%;
+      }
+
+      .slide-position {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      /*This is for the text on the slide. It will disappear with the slide on mobile device width*/
+      #slidertext {
+        position: absolute;
+        color: #fff;
+        font-size: 17px;
+        font-weight: 400;
+        text-shadow: 3px 3px 6px #000;
+        text-align: center;
+        width: 50%;
+        min-height: 45%;
+        background-color: rgba(0,0,0,.3);
+        margin: 10% 0% 0% 25%;
+      }
+
+
+      /*keyframes*/
+      /*The following keyframes will determine the fade in/out of the
+layers/images*/
+
+      @keyframes layer2anim {
+        0% {
+          opacity: 0;
+        }
+        17% {
+          opacity: 0;
+        }
+        33% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes layer3anim {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0;
+        }
+        67% {
+          opacity: 1;
+        }
+        83% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      /*The slider, as well as it's text and buttons will disappear on
+modile device width*/
+      @media(max-width: 800px) {
+        div #slidertext {
+            display: none;
+          }
+        }
+
+        @media(max-width: 800px){
+          div #slider{
+            display: none;
+          }
+        }
+
+        @media(max-width: 800px){
+          section .about {
+            display: block;
+            float: left;
+          }
+        }
+
+        button {
+          color: white;
+          font-size: 15px;
+          background-color: #f55555;
+          width: 100px;
+          padding: 5px;
+          border-radius: 4px;
+          border-color: #f55555;
+        }
+
+        button:hover {
+        background:lighten(#ED524E, 50%);
+        margin: 6px;
+        width: 150px;
+        height:40px;
+        -webkit-transition: all 100ms ease;
+      }
+
+        .coursesbtn{
+          color: #fff;
+          background-color: rgba(0,0,0,.3);
+          border-color: #fff;
+          font-size: 15px;
+          width: 100px;
+          padding: 5px;
+          border-radius: 4px;
+        }
+
+        .blkborder {
+          display: flex;
+          flex-flow: row;
+          justify-content: center;
+          background-color: black;
+          padding: 10px;
+          min-height: auto;
+          width: 100%;
+          text-align: center;
+          color: #fff;
+        }
+
+        .blkborder img {
+          padding: 20px;
+          margin-left: 80px;
+          margin-right: 120px;
+        }
+
+        @media(max-width: 800px){
+          div .blkborder {
+            display: block;
+            float: left;
+          }
+        }
+
+        /*#aboutImages {
+          margin-left: 150px;
+        }*/
+
+        @media(max-width: 800px){
+          section .about{
+            display: flex;
+            flex-flow: wrap;
+            justify-content: center;
+          }
+        }
+
+        @media(max-width: 800px){
+          section #aboutImages{
+            display: block;
+          }
+        }
+
+        .home-portfolio {
+          margin-top: 50px;
+        }
+
+        #awesome-images{
+          display: inline-block;
+          margin-top: 20px;
+          padding: 10px;
+        }
+
+        @media(max-width: 800px){
+          div .home-portfolio {
+            display: block;
+            float: left;
+          }
+        }
+
+        .codeteam {
+          margin-top: 50px;
+          margin-bottom: 50px;
+        }
+
+        .teaminfo  {
+          display: flex;
+          flex-flow: row;
+          justify-content: flex-start;
+          padding-top: 20px;
+          /*margin:0px 30px;*/
+          width: 100%;
+        }
+
+        .teaminfo img {
+          /*padding: 20px;*/
+        }
+
+        .teaminfo p {
+          padding-left: 20px;
+          width: 60%;
+          word-wrap: break-word;
+        }
+
+        @media(max-width: 800px){
+          div .codeteam {
+            display: flex;
+            flex-flow: wrap;
+            justify-content: flex-start;
+          }
+        }
+
+        @media(max-width: 800px){
+          div .teaminfo {
+            flex-flow: wrap;
+            padding: 0;
+            margin: 0;
+          }
+        }
+
+        #numbers {
+            width: 250px;
+          	height: 150px;
+            padding: 40px 0 0 100px;
+            float:left;
+            margin-left: 50px;
+            color: white;
+            font-size: 17px;
+        }
+
+        .countUp {
+          color:red;
+          margin-left:30px;
+          font-size:25px;
+        }
+
+        @media(max-width: 800px){
+          div .countUp {
+            display: none;
+          }
+          div #numbers {
+            display: none;
+          }
+        }
+
+        .subscribe {
+          text-align: center;
+          margin: 50px 0px 50px 0px;
+        }
+
+        /*carousel styling*/
+        #partners{
+          width: 10000%;
+          margin-top: 0;
+        }
+        /*this styling works with JQuery and regulates the speed and loop of the carousel*/
+        #partners.ready > *{
+        display: inline-block;
+        float:left;
+        overflow: hidden;
+
+        webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+
+
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+
+
+        -webkit-animation-duration: 20s;
+        animation-duration: 20s;
+
+
+        -webkit-animation-name: marginator;
+        animation-name: marginator;
+
+
+
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        }
+        /*the carousel will pause on hover and the movement is regulated here*/
+        #partners:hover > *{
+
+
+          -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+        }
+
+        @-webkit-keyframes marginator {
+          0% {
+            -webkit-transform: translate(0,0);
+            -webkit-transform: translate3d(0,0,0);
+          }
+          100% {
+            -webkit-transform: translate(-100%,0);
+            -webkit-transform: translate3d(-100%,0,0);
+          }
+        }
+
+        @keyframes marginator {
+          0% {
+
+            -webkit-transform: translate(0,0);
+            transform: translate(0,0);
+
+            -webkit-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+          }
+          100% {
+
+
+            -webkit-transform: translate(-100%,0);
+            transform: translate(-100%,0);
+
+
+            -webkit-transform: translate3d(-100%,0,0);
+            transform: translate3d(-100%,0,0);
+          }
+        }
+        /*This wrapper holds the carousel*/
+        #partners-wrapper{
+          overflow: hidden;
+          background-color: black;
+          margin-left: -100px;
+          width: 1450px;
+          height: 200px;
+        }
+
+        #partners img {
+          margin: 5px;
+          margin-top: 0;
+        }
+
+        footer{
+          display: grid;
+          grid-column: 1 / 12;
+          grid-row: 10 / 11;
+          margin: 70px 0px 30px 20px;
+          height: 50px;
+          grid-template-rows: 1fr;
+          grid-template-columns: repeat(4, 3fr);
+          grid-column-gap: 4vw;
+          grid-auto-columns: 25%;
+          font-size: 11px;
+          text-align: left;
+        }
+
+        footer ul li{
+          list-style-type: none;
+        }
+
+        footer div{
+          width: 200px;
+          margin-bottom: 20px;
+        }
+
+        footer a{
+          text-decoration: none;
+          color: #EE534F;
+        }
+
+        @media(max-width: 800px) {
+          footer {
+            display: block;
+            width: 100%;
+          }
+        }
+
+        .bottomfooter {
+          width: 100%;
+          background-color: #EE534F;
+          height: 60px;
+          color: #fff;
+          padding: 3px;
+        }
+
+        .bottomfooter a{
+          color: #fff;
+        }
+
+        #scroll {
+            position:fixed;
+            right:10px;
+            bottom:10px;
+            cursor:pointer;
+            width:50px;
+            height:50px;
+            background-color:#3498db;
+            text-indent:-9999px;
+            display:none;
+            -webkit-border-radius:60px;
+            -moz-border-radius:60px;
+            border-radius:60px
+        }
+        #scroll span {
+            position:absolute;
+            top:50%;
+            left:50%;
+            margin-left:-8px;
+            margin-top:-12px;
+            height:0;
+            width:0;
+            border:8px solid transparent;
+            border-bottom-color:#ffffff;
+        }
+        #scroll:hover {
+            background-color:#e74c3c;
+            opacity:1;filter:"alpha(opacity=100)";
+            -ms-filter:"alpha(opacity=100)";
+        }
+
+    </style>
+  </head>
+  <body>
+    <a href="#" id="scroll" style="display: none;"><span></span></a>
+    <header>
+          <nav>
+          <a href="index.html"><img style="margin-right: }100px" src="http://code4ct.com/wp-content/uploads/2016/06/code4ct-logo-1.jpg" }height= "50px" width= "150px"></a>
+
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="About.html">ABOUT</a></li>
+          <li><a href="Portfolio.html">PORTFOLIO</a></li>
+          <li><a href="Courses.html">COURSES</a></li>
+          <li><a href="Contact.html">CONTACT</a></li>
+
+          <input style="margin-left: 70px;" type="search" placeholder="Search"><a style="padding-left: 0px" href><span class="glyphicon glyphicon-search" style="margin-top: 5px; padding-left: 0px;"></span></a>
+
+        </nav>
+
+    </header>
+
+    <div class="container">
+
+      <div id="slider">
+
+        <div id="layer1" class="slide-position">
+          <div id="slidertext">
+          <h1>Code for Cape Town</h1>
+          <p> We want to see young women empowered to leverage technology for social innovation, so that there is greater diversity in the African tech industry. We want high school girls to have an enabling environment to imagine and create new technology that is relevant to a South African context.</p>
+          <button>Read More</button> <button class="coursesbtn">Courses</button>
+        </div>
+      </div>
+        <div id="layer2" class="slide-position">
+          <div id="slidertext" >
+          <h1>Code for Cape Town</h1>
+          <p> We want to see young women empowered to leverage technology for social innovation, so that there is greater diversity in the African tech industry. We want high school girls to have an enabling environment to imagine and create new technology that is relevant to a South African context.</p>
+          <button>Read More</button> <button class="coursesbtn">Courses</button>
+        </div>
+        </div>
+        <div id="layer3" class="slide-position">
+          <div id="slidertext">
+          <h1>Code for Cape Town</h1>
+          <p> We want to see young women empowered to leverage technology for social innovation, so that there is greater diversity in the African tech industry. We want high school girls to have an enabling environment to imagine and create new technology that is relevant to a South African context.</p>
+          <button >Read More</button> <button class="coursesbtn">Courses</button>
+        </div>
+        </div>
+      </div>
+
+      </div>
+
+      <div class="container" style="margin-bottom: 50px">
+
+    <section class="about" style="margin-top:700px">
+
+        <div style="width: 40%">
+        <h2>Who We Are</h2>
+
+        <p><b>Code for Cape Town strives to see young women empowered to leverage technology for social innovation, so that there is greater diversity in the African tech industry.</b></p>
+
+          <p>Code4CT is broadening perspectives about career opportunities for many girls and is showing them that the ICT sector offers exciting career paths with the opportunity for social impact. Through using coding and web building skills, participants are exposed to how IT skills can be applied to solve problems, and they are encouraged to use their knowledge to tackle a real local challenge. Code for Cape Town equips high potential female learners with the coding and problem solving  skills. </p>
+
+          <button style="margin-top: 15px">Read More</button>
+        </div>
+
+
+
+        <div id="aboutImages" style="float: right; width: 50%; margin-top: -370px">
+
+          <img style="margin-left: 15px; margin-bottom: 15px" src="Images\resized images\square04.jpg" alt="LAPTOP" width="200px" height="200px">
+
+          <img style="margin-left: 15px; margin-bottom: 15px" src="Images\resized images\square01.jpg" alt="STUDENT" width="200px" height="200px">
+
+          <img style="margin-left: 15px" src="Images\resized images\square02.jpg" alt="TUTOR" width="200px" height="200px">
+
+          <img style="margin-left: 15px" src= "Images\resized images\square03.jpg" alt="WORKSTATION" width="200px" height="200px">
+
+        </div>
+
+</section>
+
+</div>
+
+  <section>
+    <div class="blkborder">
+
+    <div >
+
+      <img src="Images\resized images\icons\computer.png" alt="pc">
+      <h2 style="margin-left: -30px">Coding</h2>
+      <p style="width: 60%; margin-left: 100px">Learn how to build your own websites using HTML, CSS, JavaScript & JQuery. Go on to explore exciting modules from game development to user experience design.</p>
+
+    </div>
+
+    <div >
+      <img src="Images\resized images\icons\multimedia.png" alt="multimedia">
+      <h2 style="margin-left: -30px">Communication</h2>
+      <p style="width: 80%; margin-left: 20px">Learn how to pitch ideas, represent yourself online, communicate professionally and work with online collaboration tools.</p>
+
+    </div>
+
+    <div>
+
+      <img src="Images\resized images\icons\wrench.png" alt="wrench">
+      <h2>Problem Solving</h2>
+      <p style="width: 80%; margin-left: 30px">Apply your coding skills to issues you are interested in. You will learn how to tackle complex problems using the design thinking process.</p>
+
+    </div>
+
+
+
+  </section>
+
+
+</div>
+
+<div class="container">
+
+  <section class="home-portfolio">
+    <div>
+
+    <h2>Our Awesome Portfolio</h2>
+    <p>Over the past 3 years, Code for Cape Town has reached over 600 young women with coding and social innovation.</p>
+    <p> Not only have they been exposed to coding but they have also done careers and life skills courses, design thinking workshops and social innovation projects to address local challenges.</p>
+
+  </div>
+
+  <div id="awesome-images" style="float: left; width: 50%;">
+
+      <img style ="margin: 2px 2px 2px -10px;" src="Images\resized images\square01.jpg" alt="Our Work" height= "205px" width= "240px">
+
+      <img style ="margin: 2px 2px 2px ;" src="Images\resized images\square02.jpg" alt="Our Work" height= "205px" width= "240px">
+
+      <img style ="margin: 2px 2px 2px -10px;" src="Images\resized images\square03.jpg" alt="Our Work" height= "205px" width= "240px">
+
+      <img style ="margin: 2px 2px 2px ;" src="Images\resized images\square04.jpg" alt="Our Work" height= "205px" width= "240px">
+    </div>
+
+    <div id="aside" style="float:right; width: 50%; margin-top: 30px">
+    <img src="Images\Students\IMG_7482.JPG" height= "415px" width= "100%">
+  </div>
+  </section>
+  </div>
+
+  <div class="container">
+    <div class="codeteam">
+
+    <h2>Meet The Team</h2>
+    <p>Over the past 3 years, Code for Cape Town has reached over 600 young women with coding and social innovation. Not only have they been exposed to coding but they have also done careers and life skills courses, design thinking workshops and social innovation projects to address local challenges.</p>
+
+    <div class="teaminfo">
+      <div>
+      <img src="Images\Team\Andrea01.jpg" alt="Andrea" height="250px" width="250px">
+      </div>
+      <div style="padding-top: 5px">
+      <p><b>Andrea Petersen</b></p>
+      <p><em>Operations Lead</em></p>
+      <p>Andrea thrives on seeing key players in the Code4CT ecosystem discover how they can make the greatest impact.</p>
+    </div>
+
+
+    <div>
+      <img src="Images\Team\Emma01.jpg" alt="Emma" height="250px" width="250px">
+    </div>
+    <div style="padding-top: 5px">
+      <p><b> Emma Dicks </b></p>
+      <p><em>Operations Lead</em></p>
+      <p>Emma has been recognised on numerous prestigious listing including Fast Company’s 0 Under 30.</p>
+    </div>
+
+  </div>
+    <div class="teaminfo">
+
+    <div>
+      <img src="Images\Team\Tegan01.jpg" alt="Tegan" height="250px" width="250px">
+    </div>
+    <div style="padding-top: 5px">
+      <p><b>Tegan Crous</b></p>
+      <p><em>Program Lead</em></p>
+      <p>Tegan heads up the high school program, seeing them pursue their potential in a safe environment.</p>
+    </div>
+
+
+    <div style="padding-left: 68px" >
+      <img src="Images\Team\Tracy01.jpg" alt="tracy" height="250px" width="250px">
+    </div>
+    <div style="padding-top: 5px">
+      <p><b> Tracy-Anne Sikenjana </b></p>
+      <p><em>Leadership Program Manager</em></p>
+      <p>During her time at Code4CT headed up the Ambassador programme and assisted with all program operations.</p>
+    </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+    <div class="blkborder">
+
+      <div id="numbers"><span class="countUp">3000</span> +
+        <p>Cups Of Cofee</p>
+      </div>
+      <div id="numbers"><span class="countUp">780</span> +
+        <p>Number of Girls</p>
+      </div>
+      <div id="numbers"><span class="countUp">3120</span> +
+        <p>Projects Completed</p>
+      </div>
+      <div id="numbers"><span class="countUp">8765</span> +
+        <p>Hours of Coding</p>
+      </div>
+    </div>
+
+    <div class="subscribe">
+      <h2><i style="color: #ED524E" class="fa fa-paper-plane"></i> Subscribe To Us</h2>
+
+      <p>Sign up for our newsletter:</p>
+
+      <input style="margin-left: 20px; width: 200px; height: 30px" type="text" name="email" title="Sign up for our newsletter" placeholder="Your Email" autocomplete="off" class="mailchimp-subscribe__input">
+
+      <button style="font-size: 19px" type="submit">Sign Up</button>
+    </div>
+
+    <div class="blkborder">
+      <!-- carousel -->
+      <div id="partners-wrapper">
+        <div id="partners">
+          <div>
+            <img src="Images\Logos\Transparent\Code4CT-Partners-CSG-Logo.png" width="200px" height: "80px">
+            <img src="Images\Logos\Transparent\Code4CT-Partners-Deloitte-Digital.png" width="200px" height: "80px">
+            <img src="Images\Logos\Transparent\Code4CT-Partners-Lwande.png" width="200px" height: "80px">
+            <img src="Images\Logos\Transparent\Code4CT-Partners-Mobenzi-Logo.png" width="200px" height: "80px">
+            <img src="Images\Logos\Transparent\Code4CT-Partners-Open-Box.png" height: "80px">
+            <img src="Images\Logos\Transparent\Code4CT-Partners-Take-A-Lot-Logo-1.png" width="200px" height: "80px">
+            <img src="Images\Logos\Transparent\Code4CT-Partners-TNS.png" width="200px" height: "80px">
+            <img src="Images\Logos\Transparent\Code4CT-Partners-Mobenzi-Logo.png" width="200px" height: "80px">
+            <img src="Images\Logos\Transparent\Code4CT-Partners-Open-Box.png" width="200px" height: "80px">
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+
+    <div>
+      <h4>Legal</h4>
+    <p>Code for Cape Town is a project of Innovate South Africa, which is a registered non-profit (137806NPO) and a Public Beneficiary Organisation (930050338)</p>
+
+  </div>
+
+    <div>
+
+    <h4>Company</h4>
+    <ul>
+      <li><a href="JS_Project_About.html">ABOUT</a></li>
+      <li><a href="JS_Project_Portfolio.html">PORTFOLIO</a></li>
+      <li><a href="JS\JS PROJECT\Courses.html">COURSES</a></li>
+      <li><a href="Courses.html">CONTACT</a></li>
+    </ul>
+
+  </div>
+
+  <div>
+    <h4>Learn More</h4>
+    <ul>
+      <li><a href="JS_Project_About.html">What we do</a></li>
+      <li><a href="JS_Project_Portfolio.html">Our Work</a></li>
+      <li><a href="Courses.html">Opportunities</a></li>
+    </ul>
+  </div>
+
+  <div>
+    <h4>Contact</h4>
+    <p><span class="glyphicon glyphicon-earphone"></span> 021 685 0991 </p>
+    <p><span class="glyphicon glyphicon-envelope"></span> info@code4ct.com</p>
+    <p><span class="glyphicon glyphicon-map-marker"></span> Innovate South Africa, 403 Old Castle Brewery, 6 Beach Rd, Woodstock, Cape Town, 7915</p>
+  </div>
+
+  </footer>
+
+  </div>
+
+
+    <section class="bottomfooter" style="margin-top: 150px; background-color: #EE534F">
+
+    <p style="float: left; margin-left: 100px">copyright © 2017 PRIVACY POLICY</p>
+
+    <p style="float: right; margin-right: 100px;">Follow Us:<a href="https://www.facebook.com/code4ct/" target="_blank"><i class="fa fa-facebook"></i></a>
+      <a href="https://twitter.com/@code4ct" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://www.instagram.com/code4ct/" target="_blank"><i class="fa fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fa fa-google-plus"></i></a>
+      <a href="https://www.linkedin.com/company/9414552/" target="_blank"><i class="fa fa-linkedin"></i></a>
+      <a href="#" target="_blank"><i class="fa fa-skype"></i></a></p>
+
+    </section>
+
+    <script src="JavaScript\JS" charset="utf-8"></script>
+    <script type="text/javascript">
+    // the counter will start at 0 and will reach it's given target within 3000 milliseconds
+    $('.countUp').each(function () {
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 3000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+});
+
+    </script>
+
+    <script type="text/javascript">
+    // the elements are cloned in order for the carousel to move infinitely
+    $(function () {
+      var $first=$('#partners>:first-child');
+      $('#partners').width($first.outerWidth(true));
+      $first.clone(true).appendTo('#partners');
+      $('#partners').addClass('ready');
+    })
+
+        </script>
+
+
+  </body>
+</html>

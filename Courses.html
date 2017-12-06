@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Code4CT || Courses </title>
+
+    <!-- js library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <!-- link for bootstrap icons -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- link for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style media="screen">
+    body {
+      font: 17px/1.5 'Lato', sans-serif;
+      color: #797979;
+      padding: 0;
+      margin: 0;
+      overflow-x: hidden;
+      background-color: #FFEDFB;
+    }
+
+    .container {
+      width: 100%;
+      margin-left: 100px;
+      overflow-x: hidden;
+      word-wrap: break-word;
+    }
+      /*The header includes the logo, nav and search box*/
+    header {
+      position: fixed;
+      width: 100%;
+      z-index: 1;
+      padding-top: 30px;
+      margin-bottom: 50px;
+      min-height: 70px;
+      background-color: white;
+    }
+
+    header a {
+      color: grey;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    header a:hover {
+      color: #EE534F;
+      font-weight: bold;
+    }
+
+    header li {
+      float: left;
+      display: inline;
+      padding: 7px 10px 0 20px;
+    }
+
+    header img {
+      float: left;
+      margin-left: 50px;
+    }
+
+    header nav {
+      float: left;
+    }
+
+    ul {
+      margin: 0;
+    }
+
+    header input {
+      margin-top: 8px;
+      height: 30px;
+    }
+
+    .pageheader {
+      width: 100%;
+      height: 300px;
+      color: #797979;
+      background-color: #EEEEEE;
+      padding:50px;
+    }
+
+    .pageheader h1 {
+      margin-top: 100px;
+      font-size: 40px;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .pageheader p {
+      font-size: 14px;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    @media(max-width: 800px) {
+    body {
+      width: 100%;
+      display: block;
+      padding: 0;
+      background-color: #fff;
+    }
+    }
+
+    @media(max-width: 800px) {
+    body img{
+      display: block;
+      padding: 0;
+      margin: 0;
+    }
+    }
+
+    @media(max-width: 800px) {
+      header {
+        border-bottom: none;
+      }
+    header li{
+      width: 100%;
+      display: block;
+      background-color: #EE534F;
+      border: 1px solid lightgrey;
+    }
+    header img {
+      width:100%;
+      height: auto;
+      padding: 0px;
+     }
+     header input {
+       display: none;
+     }
+     header a {
+       color: lightgrey;
+       padding-bottom: 3px;
+     }
+     header a:hover {
+       color: darkgrey;
+     }
+    }
+
+  ul {
+    list-style-type: none;
+    width: 40%;
+  }
+
+  ul li{
+    /*rgba(350,	0, 101, 0.2)*/
+    box-shadow: 2px 3px 3px 1px tomato;
+    margin: 10px;
+    border: 2px solid lightgrey;
+    text-align: center;
+  }
+
+  #sticky-cart {
+    float:right;
+    width: 40%;
+    margin-top: 80px;
+  }
+
+  #sticky-cart ul li {
+    padding: 20px;
+  }
+
+  #sticky-cart h2 {
+    padding: 20px;
+    margin-left: 15px;
+  }
+
+  #courses-list img {
+    width: 100%;
+  }
+
+  #courses-list button {
+    color: white;
+    font-size: 15px;
+    background-color: #f55555;
+    width: 100px;
+    padding: 5px;
+    border-radius: 4px;
+    border-color: #f55555;
+  }
+
+  #courses-list button:hover {
+  background:lighten(#ED524E, 50%);
+  margin: 6px;
+  width: 150px;
+  height:40px;
+  -webkit-transition: all 100ms ease;
+}
+
+  #list-right {
+    margin-top: 100px;
+  }
+
+button {
+  color: white;
+  font-size: 14px;
+  background-color: #f55555;
+  width: 100px;
+  padding: 5px;
+  border-radius: 4px;
+  border-color: #f55555;
+}
+ #show-cart {
+   width: 300px;
+
+ }
+
+ #clear-cart {
+   margin-right: 200px;
+ }
+
+ #scroll {
+     position:fixed;
+     right:10px;
+     bottom:10px;
+     cursor:pointer;
+     width:50px;
+     height:50px;
+     background-color:#3498db;
+     text-indent:-9999px;
+     display:none;
+     -webkit-border-radius:60px;
+     -moz-border-radius:60px;
+     border-radius:60px
+ }
+ #scroll span {
+     position:absolute;
+     top:50%;
+     left:50%;
+     margin-left:-8px;
+     margin-top:-12px;
+     height:0;
+     width:0;
+     border:8px solid transparent;
+     border-bottom-color:#ffffff;
+ }
+ #scroll:hover {
+     background-color:#e74c3c;
+     opacity:1;filter:"alpha(opacity=100)";
+     -ms-filter:"alpha(opacity=100)";
+ }
+
+
+    </style>
+  </head>
+  <body>
+    <a href="#" id="scroll" style="display: none;"><span></span></a>
+    <header>
+
+          <nav>
+          <a href="index.html"><img style="margin-right: 100px" src="http://code4ct.com/wp-content/uploads/2016/06/code4ct-logo-1.jpg" height= "50px" width= "150px"></a>
+
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="About.html">ABOUT</a></li>
+          <li><a href="Portfolio.html">PORTFOLIO</a></li>
+          <li><a href="Courses.html">COURSES</a></li>
+          <li><a href="Contact.html">CONTACT</a></li>
+
+          <input style="margin-left: 140px;" type="search" placeholder="Search"><a style="padding-left: 0px" href><span class="glyphicon glyphicon-search" style="margin-top: 5px; padding-left: 0px;"></span></a>
+
+        </nav>
+    </header>
+
+     <div class="pageheader">
+
+      <h1>COURSES</h1>
+      <p><span style="color: #EE534F">HOME</span> → COURSES</p>
+
+    </div>
+
+    <div class="container">
+
+
+      <div id="sticky-cart">
+        <h2>Check Out</h2>
+        <ul id="show-cart">
+          <!-- -->
+          </ul>
+          <div>
+            You have <span id="count-cart">X</span> items in your cart
+          </div>
+          <div>
+            Total Cart: R<span id="total-cart"></span>
+          </div>
+      </div>
+      <div id="courses-list">
+       <ul id="list-right">
+        <li>
+          <img src="Images\Courses\coder.jpg" alt="Coding Intro">
+          <h3>Intro to Coding: Web Pages</h3>
+          <p><b>Course Description</b>: Code a simple one-page website using HTML and JQuery.</p>
+          <p><b>Course Duration</b>: 3 hours</p>
+          <p><b>Cost</b>: R250</p>
+
+            <button class="add-to-cart" data-name="Intro to Coding: Web Pages" data-description="Code a simple one-page website using HTML and JQuery." data-duration="3 hours" data-cost="250">Add Item</button>
+
+          </li>
+
+           <li>
+             <img src="Images\Courses\create code.png" alt="Create Code">
+             <h3>Create with Code: Web Pages</h3>
+             <p><b>Course Description</b>: Learn how the internet works and code a simple one-page website using HTML, CSS and JQuery.</p>
+             <p><b>Course Duration</b>: 3 days</p>
+             <p><b>Cost</b>: R960</p>
+
+             <button class="add-to-cart" data-name="Create with Code: Web Pages" data-description="Learn how the internet works and code a simple one-page website using HTML, CSS and JQuery." data-duration="3 days" data-cost="960">Add Item</button>
+          </li>
+
+          <li>
+            <img src="Images\Courses\developer.jpg" alt="Developer">
+            <h3>Getting started as a developer</h3>
+            <p><b>Course Description</b>: Learn how to set up a development environment and practical skills to start coding.</p>
+            <p><b>Course Duration</b>: 3 hours</p>
+            <p><b>Cost</b>: R250</p>
+
+            <button class="add-to-cart" data-name="Getting started as a developer" data-description="Learn how to set up a development environment and practical skills to start coding." data-duration="3 hours" data-cost="250">Add Item</button>
+
+          </li>
+
+          <li>
+            <img src="Images\Courses\music-notes.jpg" alt="Intro Music">
+            <h3>Intro to Coding: Music</h3>
+            <p><b>Course Description</b>: Code a song using SonicPi software on a Raspberry Pi computer.</p>
+            <p><b>Course Duration</b>: 3 hours</p>
+            <p><b>Cost</b>: R250</p>
+
+            <button class="add-to-cart" data-name="Intro to Coding: Music" data-description="Code a song using SonicPi software on a Raspberry Pi computer." data-duration="3 hours" data-cost="250">Add Item</button>
+          </li>
+
+          <li>
+            <img src="Images\Courses\code and music.png" alt="Create Music">
+            <h3>Create with Code: Music</h3>
+            <p><b>Course Description</b>: Learn computer science principles by coding music with a Raspberry Pi computer.</p>
+            <p><b>Course Duration</b>: 3 days</p>
+            <p><b>Cost</b>: R960</p>
+
+            <button class="add-to-cart" data-name="Create with Code: Music" data-description="Learn computer science principles by coding music with a Raspberry Pi computer." data-duration="3 days" data-cost="960">Add Item</button>
+          </li>
+
+          <li>
+            <img src="Images\Courses\anima.jpg" alt="Animation">
+            <h3>Intro to Coding: Animation</h3>
+            <p><b>Course Description</b>: Create a 2D animation using coding language JavaScript.</p>
+            <p><b>Course Duration</b>: 3 hours</p>
+            <p><b>Cost</b>: R250</p>
+
+            <button class="add-to-cart" data-name="Intro to Coding: Animation" data-description="Create a 2D animation using coding language JavaScript." data-duration="3 hours" data-cost="250">Add Item</button>
+          </li>
+
+          <li>
+            <img src="Images\Courses\animate.jpg" alt="animate">
+            <h3>Create with Code: Animation</h3>
+            <p><b>Course Description</b>: Learn computer science principles by coding animations using JavaScript.</p>
+            <p><b>Course Duration</b>: 3 days</p>
+            <p><b>Cost</b>: R960</p>
+
+            <button class="add-to-cart" data-name="Create with Code: Animation" data-description="Learn computer science principles by coding animations using JavaScript." data-duration="3 days" data-cost="960">Add Item</button>
+          </li>
+
+          <li>
+            <img src="Images\Courses\js.jpg" alt="JS">
+            <h3>Beginner JavaScript</h3>
+            <p><b>Course Description</b>: Develop a basic proficiency in programming structures and methods in JavaScript so that you are able to create an interactive web application.</p>
+            <p><b>Course Duration</b>: 6 days</p>
+            <p><b>Cost</b>: R1800</p>
+
+            <button class="add-to-cart" data-name="Beginner JavaScript" data-description="Develop a basic proficiency in programming structures and methods in JavaScript so that you are able to create an interactive web application." data-duration="6 days" data-cost="1800">Add Item</button>
+          </li>
+
+          <li>
+            <img src="Images\Courses\front.png" alt="front end">
+            <h3>Beginner Front End Web Development</h3>
+            <p><b>Course Description</b>: Develop a good proficiency in CSS and an understanding of web design principles so that you are able to create visually pleasing web pages.</p>
+            <p><b>Course Duration</b>: 6 days</p>
+            <p><b>Cost</b>: R1800</p>
+
+            <button class="add-to-cart" data-name="Beginner Front End Web Development" data-description="Develop a good proficiency in CSS and an understanding of web design principles so that you are able to create visually pleasing web pages." data-duration="6 days" data-cost="1800">Add Item</button>
+
+          </li>
+
+          <li>
+            <img src="Images\Courses\python.jpg" alt="python">
+            <h3>Beginner Python</h3>
+            <p><b>Course Description</b>: Develop a basic proficiency in programming principles and methods in Python.</p>
+            <p><b>Course Duration</b>: 6 days</p>
+            <p><b>Cost</b>: R1800</p>
+
+            <button class="add-to-cart" data-name="Beginner Python" data-description="Develop a basic proficiency in programming principles and methods in Python." data-duration="6 days" data-cost="1800">Add Item</button>
+
+          </li>
+
+          <li>
+            <img src="Images\Courses\FULL.jpg" alt="fullstack">
+            <h3>Full Stack JavaScript</h3>
+            <p><b>Course Description</b>: Develop an understanding of the front and backend development environment and basic proficiency in server side JavaScript and object-oriented programming. By the end of the course you will be able to architect an application, control flow in an application and persist and retrieve data in a database.</p>
+            <p><b>Course Duration</b>: 6 days</p>
+            <p><b>Cost</b>: R1800</p>
+
+            <button class="add-to-cart" data-name="Full Stack JavaScript" data-description="Develop an understanding of the front and backend development environment and basic proficiency in server side JavaScript and object-oriented programming. By the end of the course you will be able to architect an application, control flow in an application and persist and retrieve data in a database." data-duration="6 days" data-cost="1800">Add Item</button>
+
+          </li>
+
+          <li>
+            <img src="Images\Courses\deploy.png" alt="web deploy">
+            <h3>Website Deployment</h3>
+            <p><b>Course Description</b>: Learn how to manage and deploy code to a server environment so that you can host your own web pages.</p>
+            <p><b>Course Duration</b>: 4 days</p>
+            <p><b>Cost</b>: R1200</p>
+
+            <button class="add-to-cart" data-name="Website Deployment" data-description="Learn how to manage and deploy code to a server environment so that you can host your own web pages." data-duration="4 days" data-cost="1200">Add Item</button>
+          </li>
+          </ul>
+        <button id="clear-cart" style="margin-left: 235px">Clear Cart</button>
+    </div>
+
+  </div>
+
+    <script src="Courses.js" charset="utf-8"></script>
+    <script src="JavaScript\JS" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    //displayCart : function
+    //My process to this jquery summary as well as the external js file is commented out belowe the code
+    //prevent default will prevent the link's default behaviour
+    $(".add-to-cart").click(function(event) {
+        event.preventDefault();
+        var name = $(this).attr("data-name");
+        var description = $(this).attr("data-description");
+        var duration = $(this).attr("data-duration");
+        var cost = Number($(this).attr("data-cost"));
+
+        shoppingCart.addItemToCart(name, description, duration, cost, 1);
+        displayCart();
+    });
+
+    $("#clear-cart").click(function(event) {
+      shoppingCart.clearCart();
+      displayCart();
+    });
+
+    function displayCart() {
+        var cartArray = shoppingCart.listCart();
+        console.log(cartArray.length);
+        var output = "";
+        for (var i in cartArray) {
+            output += "<li>" + "<b>Course Name:</b> "+cartArray[i].name+ "<br/>"+ "<b>Course Description:</b> "+cartArray[i].description+"<br/>"+"<b>Course Duration:</b> "+ cartArray[i].duration+"<br/>"+ "<b>Cost:</b> " +cartArray[i].cost+"<br/>"+ "<b>Number of Lessons:</b> "+ cartArray[i].count+" x "+ cartArray[i].total+"<br/>"+"<button class='subtract-item' data-name='"+cartArray[i].name+"'>Remove Item</button>"+"<button class='delete-item' data-name='"+ cartArray[i].name+"'>Remove All</button>"+"</li>";
+        }
+
+        $("#show-cart").html(output);
+        $("#count-cart").html(shoppingCart.countCart());
+          $("#total-cart").html(shoppingCart.totalCart());
+    }
+
+    $("#show-cart").on("click", ".delete-item", function(event){
+      var name = $(this).attr("data-name");
+      shoppingCart.removeItemFromCartAll(name);
+      displayCart();
+    });
+
+    $("#show-cart").on("click", ".subtract-item", function(event){
+      var name = $(this).attr("data-name");
+      shoppingCart.removeItemFromCart(name);
+      displayCart();
+    });
+
+        displayCart();
+
+        // console.log("Shopping Cart: cart");
+        // console.log(shoppingCart.cart);
+        // console.log("Global Cart: ");
+        // console.log(cart);
+
+        //cart : Array
+        // Course : Object/class
+        // addItemToCart : function
+        //removeItemFromCart : function
+        //removeItemFromCartAll : function
+        //clearCart : function
+        //countCart : function
+        //totalCart : function
+        //listCart : function
+        //saveCart : function
+        //loadCart : function
+        //array to hold the cart items
+
+
+      // !!-- var cart = [];
+
+        //a function that will generate objects that will store in the cart array
+      /* !!--var Course = function(name, description, duration, cost, count) {
+          this.name = name
+          this.description = description
+          this.duration = duration
+          this.cost = cost
+          this.count = count
+      };*/
+
+      // addItemToCart(name, description, duration, cost)
+
+        /* !!--function addItemToCart(name, description, duration, cost, count) {
+            //loop every item in cart
+            for (var i in cart) {
+                //look at each item in the name property and match
+                if (cart[i].name === name) {
+                    cart[i].count += count;
+                    saveCart();
+                    return;
+                }
+            }
+           var course = new Course (name, description, duration, cost, count);
+           cart.push(course);
+            saveCart();
+        }*/
+
+
+      //removeItemFromCart (name)
+        /* !!--function removeItemFromCart(name) {
+            for (var i in cart) {
+                if (cart[i].name === name) {
+                    cart[i].count --;
+                    if (cart[i].count === 0) {
+                        cart.splice(i, 1); //to remove an item from the array
+                    }
+                    break;
+                }
+            }
+            saveCart();
+        }*/
+
+
+      //removeItemFromCartAll(name)
+      /* !!--  function removeItemFromCartAll (name){
+            for (var i in cart) {
+                if(cart[i].name === name){
+                cart.splice(i, 1);
+                break;
+            }
+          }
+            saveCart();
+        }*/
+
+//        addItemToCart("Intro to Coding: Web Pages", "Code a simple one-page website using HTML and JQuery.", "3 hours", 250, 0);
+//        addItemToCart("Create with Code: Web Pages", "Learn how the internet works and code a simple one-page website using HTML, CSS and JQuery.", "3 days", 960, 0);
+//        addItemToCart("Getting started as a developer", "Learn how to set up a development environment and practical skills to start coding.", "3 hours", 250, 0);
+//        addItemToCart("Intro to Coding: Music", "Code a song using SonicPi software on a Raspberry Pi computer.", "3 hours", 250, 1);
+//        addItemToCart("Create with Code: Music", "Learn computer science principles by coding music with a Raspberry Pi computer.", "3 days", 960, 0);
+//        addItemToCart("Intro to Coding: Animation", "Create a 2D animation using coding language JavaScript.", "3 hours", 250, 1);
+//        addItemToCart("Create with Code: Animation", "Learn computer science principles by coding animations using JavaScript.", "3 days", 960, 0);
+//        addItemToCart("Beginner JavaScript", "Develop a basic proficiency in programming structures and methods in JavaScript so that you are able to create an interactive web application.", "6 days", 1800, 0);
+//        addItemToCart("Beginner Front End Web Development", "Develop a good proficiency in CSS and an understanding of web design principles so that you are able to create visually pleasing web pages.", "6 days", 1800, 0);
+//        addItemToCart("Beginner Python", "Develop a basic proficiency in programming principles and methods in Python.", "6 days", 1800, 0);
+//        addItemToCart("Full Stack JavaScript", "Develop an understanding of the front and backend development environment and basic proficiency in server side JavaScript and object-oriented programming. By the end of the course you will be able to architect an application, control flow in an application and persist and retrieve data in a database.", "6 days", 1800, 0);
+//        addItemToCart("Website Deployment", "Learn how to manage and deploy code to a server environment so that you can host your own web pages.", "4days", 1200, 0);
+
+
+
+      //clearCart()
+        /* !!--function clearCart() {
+            cart = [];
+            saveCart();
+        }*/
+
+      //countCart() how many items i have in the cart
+        /* !!-- function countCart() {
+            var totalCount = 0;
+            for (var i in cart) {
+                totalCount += cart[i].count;
+            }
+            return totalCount;
+        }*/
+
+
+      //totalCart() total cost
+        /* !!function totalCart() {
+            var totalCost = 0;
+            for (var i in cart) {
+                totalCost += cart[i].cost * cart[i].count;
+            }
+            return totalCost;
+        }*/
+
+
+      //listCart() -> returns cart as a list
+        /* !!--function listCart() {
+            var cartCopy = [];
+            for (var i in cart) {
+                var course = cart[i];
+                var courseCopy = {};
+                //p for property
+                for ( var p in course) {
+                    courseCopy [p] = course[p];
+                }
+                courseCopy.total = course.cost * course.count;
+                cartCopy.push(courseCopy);
+            }
+            return cartCopy;
+        }*/
+
+
+      //saveCart(), if the user leaves the page, it will save the cart in the local storage
+        /* !!--function saveCart() {
+            localStorage.setItem("shoppingCart", JSON.stringify(cart));
+        }*/
+
+
+      //loadCart(), if the user reloads the page after leaving it will load the content from the saved data
+        /* !!--function loadCart() {
+            cart = JSON.parse( localStorage.getItem("shoppingCart"));
+        }*/
+
+
+
+        // var array = shoppingCart.listCart();
+
+
+    </script>
+  </body>
+</html>
